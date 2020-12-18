@@ -1,0 +1,31 @@
+.filter-item {
+
+  &::after {
+    height: 5px;
+    width: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    background-color: red;
+    transition-property: opacity;
+    transition-duration: .3s;
+  }
+
+  &--active {
+    &::after {
+      display: block;
+      background: rgb(255, 0, 0);
+    }
+
+    span {
+      color: rgb(255, 0, 0);
+    }
+  }
+
+  span {
+    text-align: center;
+    display: block;
+    transition-property: color;
+    transition-duration: .3s;
+  }
+}
