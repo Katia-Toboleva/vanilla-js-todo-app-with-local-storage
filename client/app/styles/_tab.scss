@@ -1,0 +1,45 @@
+.tab {
+  position: relative;
+  cursor: pointer;
+
+  &:not(.tab--active):hover {
+    background: #fafafa;
+  }
+
+  &:not(.tab--active):hover::after {
+    background: #aaa;
+  }
+
+  &::after {
+    display: block;
+    content: '';
+    height: 4px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+  }
+
+  &--active {
+    &::after {
+      background: #1a73e8;
+      opacity: 1;
+    }
+
+    span {
+      color: #1a73e8;
+    }
+  }
+
+  span {
+    padding: 15px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-size: 14px;
+    font-weight: bold;
+    white-space: nowrap;
+    color: #aaa;
+  }
+}
