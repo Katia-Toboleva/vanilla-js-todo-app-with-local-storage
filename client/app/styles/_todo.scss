@@ -1,0 +1,15 @@
+.todo-list {
+  &__item {
+    padding: 10px;
+
+    &:not(:last-of-type) {
+      border-bottom: 1px solid #ddd;
+    }
+  }
+}
+
+.todo-filters {
+  &__item {
+    padding: 10px 15px;
+  }
+}
