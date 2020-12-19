@@ -2,44 +2,101 @@
   position: relative;
   cursor: pointer;
 
-  &:not(.tab--active):hover {
-    background: #fafafa;
-  }
-
-  &:not(.tab--active):hover::after {
-    background: #aaa;
+  span {
+    padding: 6px 10px 10px;
+    display: block;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    white-space: nowrap;
+    color: rgb(129, 129, 129);;
   }
 
   &::after {
     display: block;
     content: '';
-    height: 4px;
+    height: 3px;
     position: absolute;
     bottom: 0;
     left: 0;
     width: 100%;
+    z-index: -1;
+  }
+
+  &--not-done,
+  &--pending,
+  &--done,
+  &--all {
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: 50%;
+      left: 0;
+      transform: translateY(-50%);
+      font-weight: 700;
+      width: 24px;
+      height: 24px;
+      padding: 7px 0 5px 14px;
+      color: #070047;
+      z-index: 0;
+      outline: 0;
+    }
+  }
+
+  &--not-done {
+    &::before {
+      content: 'N';
+      background-color: rgb(255, 75, 75);
+    }
+  }
+
+  &--pending {
+    &::before {
+      content: 'P';
+      background-color: rgb(252, 255, 78);
+    }
+  }
+
+  &--done {
+    &::before {
+      content: 'D';
+      background-color: rgb(70, 255, 153);
+    }
+  }
+
+  &--all {
+    &::before {
+      content: 'A';
+      background-color: rgb(221, 108, 255);
+    }
   }
 
   &--active {
+    &::before {
+      outline: 3px solid #1100a7;
+      outline-offset: -3px;
+      transition: outline 300ms ease-in;
+    }
+
     &::after {
-      background: #1a73e8;
+      transition: background 300ms ease-in;
+      background: #1100a7;
       opacity: 1;
     }
 
     span {
-      color: #1a73e8;
+      color: #1100a7;
     }
   }
 
-  span {
-    padding: 15px;
-    display: block;
-    text-align: center;
-    width: 100%;
-    text-transform: uppercase;
-    font-size: 14px;
-    font-weight: bold;
-    white-space: nowrap;
-    color: #aaa;
+  &:not(.tab--active):hover::before {
+    outline: 3px solid rgb(129, 129, 129);
+    outline-offset: -3px;
+  }
+
+  &:not(.tab--active):hover::after {
+    background: rgb(129, 129, 129);
   }
 }
