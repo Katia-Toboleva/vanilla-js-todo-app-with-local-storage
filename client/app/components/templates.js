@@ -1,7 +1,7 @@
 export const generateFilterButtonTemplate = ({ id, filterName, text }) => `
     <div class='grid__item'>
       <button
-        class='button'
+        class='button button--${filterName}'
         data-id='${id}'
         data-filter='${filterName}'
       >
@@ -18,7 +18,7 @@ export const generateTodoActionsTemplate = (item) => {
       ? generateFilterButtonTemplate({
         id,
         filterName: 'not-done',
-        text: 'Not Done',
+        text: 'N',
       })
       : '';
 
@@ -27,16 +27,16 @@ export const generateTodoActionsTemplate = (item) => {
       ? generateFilterButtonTemplate({
         id,
         filterName: 'pending',
-        text: 'Pending',
+        text: 'P',
       })
       : '';
 
   const doneButton =
     status !== 'done'
-      ? generateFilterButtonTemplate({ id, filterName: 'done', text: 'Done' })
+      ? generateFilterButtonTemplate({ id, filterName: 'done', text: 'D' })
       : '';
 
-  const removeButton = `<div class='button--remove' data-id='${id}'><i /></div>`;
+  const removeButton = `<div class='button--remove' data-id='${id}'><i></i></div>`;
 
   return `
     <div class='todo-item__actions'>
@@ -81,7 +81,7 @@ export const getFiltersTemplate = (currentFilter) => {
   ];
 
   const elements = filters.map((item) => {
-    const classes = ['tab'];
+    const classes = ['tab', `tab--${item.value}`];
 
     if (item.value === currentFilter) {
       classes.push('tab--active');
@@ -118,11 +118,10 @@ export const createFiltersTemplate = (currentFilter) => {
   return todoFilters;
 };
 
-
 export const createDefaultMessageTemplate = () => {
   const defaultMessageTemplate = `
     <div class="default-message-container">
-      <span class="default-message">There is nothing saved</span>
+      <span class="default-message">No items in this section</span>
     </div>
   `;
   return defaultMessageTemplate;
@@ -135,15 +134,15 @@ export const createTodoHeaderTemplate = () => {
   const template = `
     <div class='section'>
       <div class='section__header'>
-        <span>ADD A TODO</span>
+        <span>My todo list</span>
       </div>
       <div class='section__body'>
         <div class="grid">
           <div class='grid__item'>
-            <input class="input" type="text" placeholder="Your todo.." />
+            <input class="input" type="text" placeholder="Todo..." />
           </div>
           <div class='grid__item'>
-            <button class="button">Create</button>
+            <button class="button button--create">Create</button>
           </div>
         </div>
       </div>
@@ -170,4 +169,3 @@ export const generateTodosTemplate = (currentFilter, currentTodos) => {
     ? createDefaultMessageTemplate()
     : generateTodoItemsTemplate(newTodos);
 };
-
