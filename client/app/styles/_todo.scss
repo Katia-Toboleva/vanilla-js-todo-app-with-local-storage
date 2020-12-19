@@ -1,6 +1,14 @@
+.todo {
+  >:not(:last-child) {
+    margin-bottom: 40px;
+  }
+}
+
 .todo-list {
   &__item {
-    padding: 10px;
+    font-family: 'Source Sans Pro', sans-serif;
+    font-size: 18px;
+    padding: 5px;
 
     &:not(:last-of-type) {
       border-bottom: 1px solid #ddd;
@@ -12,4 +20,11 @@
   &__item {
     padding: 10px 15px;
   }
+}
+
+.default-message-container {
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: 600;
+  color: rgb(129, 129, 129);
 }
