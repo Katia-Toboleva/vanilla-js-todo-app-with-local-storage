@@ -1,17 +1,17 @@
 body {
-  height: 100vh;
-  background: linear-gradient(45deg, rgb(254, 59, 111), rgb(197, 121, 208), rgb(255, 212, 179), rgb(106, 171, 249));
   font-size: 16px;
   font-family: 'Source Sans Pro', sans-serif;
   color: #070047;
+  position: relative;
 }
 
 #app {
   position: absolute;
   width: 650px;
-  top: 20px;
+  top: 50px;
   left: 50%;
   transform: translateX(-50%);
   padding: 25px 35px;
   background-color: rgba(255, 255, 255, 0.486);
+  box-shadow: 3px 3px 30px 3px rgba(0, 0, 0, 0.1);
 }
