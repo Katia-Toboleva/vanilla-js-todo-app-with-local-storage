@@ -8,21 +8,15 @@ Vanilla JavaScript, Local Storage, SCSS, Webpack, Babel, Eslint, Stylelint.
 
 ### Demo:
 
-**Note:** the background in the gifs below looks a bit strange, please run the app to see the actual colors.
+1. Adding todos:
 
-1. Adding a todo:
+![todo-app-1](https://user-images.githubusercontent.com/66952678/104581704-da06ff80-5656-11eb-9f92-c8c4f4a5cdc9.gif)
 
-![todo-app-1](https://user-images.githubusercontent.com/66952678/102696196-6d017500-4224-11eb-997b-a352f477b106.gif)
+2. Changing status of todos and Switching between status caterories:
 
-2. Changing status of todos:
+![todo-app-2](https://user-images.githubusercontent.com/66952678/104582078-5bf72880-5657-11eb-9687-764f421b462a.gif)
 
-![todo-app-2](https://user-images.githubusercontent.com/66952678/102695965-c5377780-4222-11eb-9f80-1f4834550992.gif)
+3. Deleting todos:
 
+![todo-app-3](https://user-images.githubusercontent.com/66952678/104582276-94970200-5657-11eb-9f52-eaf53b900f58.gif)
 
-3. Switching between status caterories:
-
-![todo-app-3](https://user-images.githubusercontent.com/66952678/102696038-67575f80-4223-11eb-82cc-6c16651c7198.gif)
-
-4. Deleting todos:
-
-![todo-app-4](https://user-images.githubusercontent.com/66952678/102696087-abe2fb00-4223-11eb-8686-90542b806368.gif)
